@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script>
+        window.onload = function(){
+            document.getElementById("token").innerHTML = Cookies.get("token");
+        }
+
+    </script>
+</head>
+<body>
+<h1>User Profile</h1>
+<h2 id="token"></h2>
+</body>
+</html>

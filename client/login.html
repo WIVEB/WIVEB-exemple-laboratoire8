@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script>
+        let myHeaders = new Headers();
+
+        let myInit = { method: 'POST',
+            headers: myHeaders,
+            mode: 'cors',
+            cache: 'default' };
+
+        fetch('/login',myInit)
+            .then(function(response) {
+                return response.json();
+            }).then(function(response){
+                Cookies.set('token', response.id);
+        });
+    </script>
+</head>
+<body>
+<h1>Login</h1>
+</body>
+</html>
