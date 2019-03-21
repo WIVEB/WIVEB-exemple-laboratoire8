@@ -6,11 +6,13 @@
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script>
         let myHeaders = new Headers();
+        myHeaders.append('Content-Type', 'application/json');
 
         let myInit = { method: 'POST',
             headers: myHeaders,
             mode: 'cors',
-            cache: 'default' };
+            cache: 'default',
+            body: JSON.stringify({param:"hello"})};
 
         fetch('/login',myInit)
             .then(function(response) {

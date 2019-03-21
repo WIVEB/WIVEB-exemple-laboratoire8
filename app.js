@@ -3,6 +3,8 @@ let bodyParser = require('body-parser');
 let cookieParser = require('cookie-parser');
 let cors = require('cors');
 let app = express();
+app.use(express.json());       // to support JSON-encoded bodies
+app.use(express.urlencoded());
 let corsOptions = {
     origin: '*',
     methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE', 'UPDATE'],
@@ -28,6 +30,7 @@ app.get('/userprofile', function(req, res) {
 });
 
 app.post('/login', function(req, res) {
+    console.log(req.body.param)
     userId++;
     res.send({id:userId});
 });
